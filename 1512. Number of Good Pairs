@@ -1,1 +1,10 @@
-
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        # check from left to right, don't recheck
+        pairs = 0
+        for i in range(len(nums)-1):  # for indices in nums, except rightmost (rightmost has no valid pairs)
+            for j in range(i+1,len(nums)): # for all indices to the right of i, including final index 
+                if nums[i] == nums[j]:
+                    pairs += 1
+        return pairs
+        
