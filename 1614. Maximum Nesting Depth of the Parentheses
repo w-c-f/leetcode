@@ -1,0 +1,12 @@
+class Solution:
+    def maxDepth(self, s: str) -> int:
+        p = _max = 0
+        
+        for i in s: # pass through one time, count greatest number of open parenthesis 
+            if i is "(":
+                p += 1
+            elif i is ")":
+                p -= 1
+            if _max < p:
+                _max = p
+        return _max
