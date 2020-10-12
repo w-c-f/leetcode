@@ -1,0 +1,10 @@
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        result = []
+        for i in range(len(nums)):
+            smaller = 0
+            for j in range(len(nums)):      # this is wasteful, because we check identical pairs multiple times. sorting first would reduce time on large sets
+                if nums[i] > nums[j]:
+                    smaller += 1
+            result.append(smaller)
+        return result
