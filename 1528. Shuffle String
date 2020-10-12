@@ -1,0 +1,10 @@
+class Solution:
+    def restoreString(self, s: str, indices: List[int]) -> str:
+        # convert string to list to utilize list comprehension
+        source = list(s)    # immutable source list
+        temp = list(s)      # WIP string, copying information from template
+        for i in range(len(indices)):
+            temp[indices[i]] = source[i]            
+            
+        temp = "".join(map(str,temp))
+        return temp
